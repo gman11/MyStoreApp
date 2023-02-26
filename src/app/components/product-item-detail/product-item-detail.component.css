@@ -1,0 +1,33 @@
+
+img {
+    border-radius: 10px;
+    width: 320px;
+  }
+  
+  .select-input {
+    display: block ;
+    width: 108px; 
+    margin-bottom: 8px;
+  }
+  
+  .detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 64px;
+  }
+  
+  .detail-item {
+    margin-left: 128px;
+    margin-right: 128px;
+  }
+  .addButton{
+    display: block;
+    margin-top: 8px;
+
+  }
+  
+  .back-link {
+    display: block;
+    margin-top: 8px;
+  }

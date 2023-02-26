@@ -1,0 +1,15 @@
+<form #form="ngForm"(ngSubmit)="onSubmit()">
+    <div>
+        <label for="fullName" > Full Name</label><br>
+        <input type="text" id="fullName":name="fullName" [(ngModel)]="fullName"  required/>
+    </div>
+    <div>
+        <label for="address"> Address </label><br> 
+        <input type="text" id="address" name="address" [(ngModel)]="address" required #addressReq="ngModel"/><span *ngIf="addressReq.invalid"></span>
+    </div>
+    <div>
+        <label for="creditCard" > Credit Card Number</label><br>
+        <input type="text" id="creditCard" name="creditCard" [(ngModel)]="creditCard" required/>
+    </div>
+    <button  class="btn btnSubmit" type="submit" [disabled]="form.invalid ||  cartItem.length <=0" > Submit</button>
+</form>

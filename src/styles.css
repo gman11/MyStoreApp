@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+.btn{
+    background-color:#33B5E5;
+    color:white;
+}
+.btn:hover{
+    background-color: dodgerblue;
+    color:white;
+}
+
+a{
+ text-decoration: none;
+}
