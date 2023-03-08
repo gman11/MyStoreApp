@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+You have done a really good job with providing all the instructions.
+You must provide a brief description of components in the application and the flow of application.
+It really helps me, as a mentor and a fellow developer, to access the application and understand the structure of the application.
+
+The Project README includes a description of the project, as well as instructions for installation and launch
+
