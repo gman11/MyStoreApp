@@ -1,3 +1,6 @@
 .btnSubmit{
     margin-top: 5px;
 }
+.errors{
+    color:red;
+}

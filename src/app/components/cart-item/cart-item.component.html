@@ -4,7 +4,7 @@
 
         <p>{{cartItem.name}}</p>
         <p>{{cartItem.price | currency}}</p>
-        <select class="select-input" id="numberSelect" value="{{cartItem.quantity}}" #numberSelect> 
+        <select class="select-input" id="numberSelect" [(ngModel)]="test" #numberSelect ngModel (ngModelChange)="nameChanged(test,cartItem)"> 
             <option value=1>1 </option>
             <option value=2>2 </option>
             <option value=3>3 </option>

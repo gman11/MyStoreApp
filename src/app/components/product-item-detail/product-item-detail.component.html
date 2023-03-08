@@ -1,6 +1,8 @@
 <div class="detail-container">
-    <img [src]='item.url' >
+    <img src={{item.url}}>
     <div class="detail-item">
+        <ngb-alert #selfClosingAlert *ngIf="successMessage" type={{alertType}} (closed)="successMessage = ''">{{ successMessage }}
+        </ngb-alert>
         <h1>{{item.name}}</h1>
         <h3>{{item.price | currency}}</h3>
         <h3>{{item.description}}</h3>

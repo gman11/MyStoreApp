@@ -19,7 +19,6 @@ export class ItemsService {
   getItemById(id:number):Observable<Items | undefined>{
     const item =  this.http.get<Items[]>('/assets/data/items.json').pipe(
       map(data => data.find( i=> i.id === id))
-
     );
     return item;
   }  

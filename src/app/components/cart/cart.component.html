@@ -1,10 +1,14 @@
 <div class="container">
     <div class="cart-container">
         <div class="cart-panel">
+            <ngb-alert #selfClosingAlert *ngIf="successMessage" type={{alertType}} (closed)="successMessage = ''"
+	>{{ successMessage }}
+</ngb-alert>
             <div class="totalCost" *ngIf="cartItems.length" >
-                Total Cost ${{totalCost}}
+                <!-- <input (ngModelChange)="calculateTotalCost()" > -->
+                 Total Cost ${{totalCost | currency}}
             </div>
-            <app-cart-item  class="cart-item" *ngFor="let cartItem of cartItems" [cartItem]="cartItem" (deleted)="deleted(cartItem)"></app-cart-item>
+            <app-cart-item  class="cart-item" *ngFor="let cartItem of cartItems" [cartItem]="cartItem" (deleted)="deleted(cartItem)" (update)="updateCart($event)" ></app-cart-item>
             <h2 *ngIf="!cartItems.length"> Cart Empty</h2>
         </div>
         <div class="form-margin">

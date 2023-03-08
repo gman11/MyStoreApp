@@ -18,6 +18,6 @@
         </select>
         <button class="btn " (click)="addToCart(item,numberSelect.value)">Add</button>
 </div>
-<ngb-alert #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''"
+<ngb-alert #selfClosingAlert *ngIf="successMessage" type={{alertType}} (closed)="successMessage = ''"
 	>{{ successMessage }}
 </ngb-alert>

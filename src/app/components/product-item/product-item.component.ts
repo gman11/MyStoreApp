@@ -12,13 +12,14 @@ import { Subject, debounceTime } from 'rxjs';
 export class ProductItemComponent implements OnInit {
   @Input()
   item!: Items;
+  alertType ="success";
 
   constructor(private shoppingCartService:ShoppingCartService) { }
    private _success = new Subject<string>();
 
    successMessage = "";
 
-   @ViewChild('selfClosingAlert', { static: false })selfClosingAlert!: NgbAlert 
+   @ViewChild('selfClosingAlert', { static: false })selfClosingAlert!: NgbAlert;
 
   ngOnInit(): void {
     this._success.subscribe((message) => (this.successMessage = message));
@@ -31,18 +32,21 @@ export class ProductItemComponent implements OnInit {
   
   }
   addToCart(newItem:Items, quantity:string){
-    console.log("clicked on :" ,newItem);
  
-    this.shoppingCartService.addToShoppingCartList(newItem, Number(quantity));
-    
-    this.changeSuccessMessage(newItem)
+    const result = this.shoppingCartService.addToShoppingCartList(newItem, Number(quantity));
+  
+    this.changeSuccessMessage(newItem, result)
   }
-  private changeSuccessMessage(item:Items) {
-    console.log("inside changeSuccess ", item)
-		this._success.next(`${item.name} -successfully added.`);
-    
+  private changeSuccessMessage(item:Items, result:number) {
+    if(result == 1){
+      this.alertType = "success";
+      this._success.next(`${item.name} -successfully added.`);
+    }
+    else if (result == 0){
+      this.alertType = "warning";
+      this._success.next(`${item.name} - was updated successfully.`);
+    }
 
 	}
   
-
 }

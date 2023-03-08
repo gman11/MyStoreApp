@@ -1,8 +1,8 @@
 export class cartItems{
     id: number=0;
-    quantity:number | undefined;
-    name: string | undefined;
+    quantity:number=0;
+    name: string ="";
     price: number =0;
-    url: string | undefined;
-    description: string | undefined;
+    url: string ="";
+    description: string ="";
 }

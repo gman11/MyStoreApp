@@ -21,40 +21,43 @@ export class ShoppingCartService {
   constructor() { }
 
   getShopingCartList(){
-   
-    console.log("current cart item: ",this.shopingCartList);
-    return this.shopingCartList;
+       return this.shopingCartList;
   };
 
-  addToShoppingCartList(newItem:Items, quantity:number){
-    // add id to new item
-    console.log("New Item: ", newItem);
+  addToShoppingCartList(newItem:Items, quantity:number):number{
 
-    this.shopingCartList.push({id:newItem.id,description:newItem.description,name:newItem.name,price:Number(newItem.price),url:newItem.url,quantity:quantity});
-    //return this.shopingCartList;
+    //check of item already on the list
+    const index:number = this.findItem(newItem.id)
+    if( index > -1){
+      //update quantity
+      this.shopingCartList[index].quantity = quantity;
+      return 0;
+
+    }
+    else{
+      this.shopingCartList.push({id:newItem.id,description:newItem.description,name:newItem.name,price:Number(newItem.price),url:newItem.url,quantity:quantity});
+      return 1;
+    }
   }
   clearShoppingCartList(){
     this.shopingCartList = [];
   };
   
-  deleteShoppingCartItem(id:cartItems):cartItems[]{
-    console.log("inside delete shooping cart item. " , id);
-    console.log("current cart items: ", this.shopingCartList);
-    
-    const index:any = this.shopingCartList.findIndex( x=>{
-      console.log("x:  ",x);
-      
-       return x.id == id.id
-        
+  deleteShoppingCartItem(item:cartItems):cartItems[]{
 
-    });
-    
-    console.log("index = ", index);
+   const index =   this.findItem(item.id)
 
-    if(index > -1)
+    if( index > -1)
       this.shopingCartList.splice(index,1);
 
     return this.shopingCartList;
   };
+
+  private findItem(id:number):number{
+    const index:any = this.shopingCartList.findIndex( x=>{
+       return x.id == id
+    });
+    return index;
+  }
 }
 
