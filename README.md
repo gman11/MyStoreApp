@@ -26,10 +26,55 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+## Components
+cart:  this component displays the shopping cart items and it is the parent of both the car-item and submit-form.
+cart-item: this component is used to display the individual shopping cart item on the cart component.
+Confirmation: this component displays the confirmation information to the user.
+Header: this component displays  the title and links to the products and cart.
+Product-item: this component holds the main information about a product
+Product-item-detail: this component shows the detailed information about a product.
+Product-list: this component shows all the product items.
+Submit-form: this component submits the product order.
 
-You have done a really good job with providing all the instructions.
-You must provide a brief description of components in the application and the flow of application.
-It really helps me, as a mentor and a fellow developer, to access the application and understand the structure of the application.
+## Services
+Items.service : this service is to get the products from a JSON file.
+Shopping-cart.service : this service is to perform CRUD operations on shopping cart items.
 
-The Project README includes a description of the project, as well as instructions for installation and launch
+## Model
+
+cartItems: this model is to be used on the shopping cart service cart related components.
+Items: this model is to be used on the items service and product related components. 
+
+## Assets
+ items.json  : this file holds all the product items.
+
+
+## Application Flow
+
+1.Select the quantity number for the desired product and the click add button. Repeat these steps for the products you need.
+
+2.Click on the Cart link to open the cart page.
+
+3.Update your cart items if necessary. You can delete items or change the quantity.
+
+4.Add your full name, address and credit card.
+
+5.Click on the submit button to complete the order.
+
+6.Confirm your items
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
