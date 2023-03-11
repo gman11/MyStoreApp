@@ -6,13 +6,13 @@
     </div>
     <div>
         <label for="address"> Address </label><br>  
-        <input type="text" id="address" name="address" #addressReq="ngModel" [(ngModel)]="address" required required minlength="2"/>
+        <input type="text" id="address" name="address" #addressReq="ngModel" [(ngModel)]="address" required  minlength="2"/>
         <div class="errors" *ngIf="addressReq.errors"> *Address length must be greather than 2</div>
     </div>
     <div>
         <label for="creditCard" > Credit Card Number</label><br>
-        <input type="text" id="creditCard" name="creditCard" #creditCardReq = "ngModel" [(ngModel)]="creditCard" required required minlength="10"/>
-        <div class="errors" *ngIf="creditCardReq.errors"> *Credit Card length must be greather than 10</div>
+        <input type="text" id="creditCard" name="creditCard" #creditCardReq = "ngModel" [(ngModel)]="creditCard" required pattern="[0-9\s]{13,19}" minlength="13" maxlength="19"  />
+        <div class="errors" *ngIf="creditCardReq.errors"> *Credit Card length must be between 13 and 19 and contain only numbers</div>
 
     </div>
     <button  class="btn btnSubmit" type="submit"  [disabled]="form.invalid ||  cartItem.length <=0"> Submit</button>
